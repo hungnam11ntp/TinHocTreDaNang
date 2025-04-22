@@ -1,8 +1,0 @@
-# Bài 1
-s = input()
-s = s.split(" ")
-for i in range(len(s)):
-    s[i] = s[i].capitalize()
-for i in s:
-    if i != "":
-        print(i, end = " ")

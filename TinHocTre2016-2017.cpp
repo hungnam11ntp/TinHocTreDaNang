@@ -39,3 +39,36 @@ int main() {
 }
 
 // Bài 3
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+ll digits(ll n) {
+    ll ans = 0;
+    while (n > 0) {
+        ll d = n % 10;
+        ans += d;
+        n /= 10;
+    }
+    return ans;
+}
+typedef long long ll;
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    ifstream fin("TIMSO.INP");
+    ofstream fout("TIMSO.OUT");
+    ll n, ans = 0;
+    fin >> n;
+    for (ll i = 0; i <= 162; i++) {
+        if (n < i) {
+            break;
+        }
+        if (n - i + digits(n - i) == n) {
+            ans = n - i;
+            break;
+        }
+    }
+    fout << ans;
+    fin.close();
+    fout.close();
+}

@@ -72,3 +72,29 @@ int main() {
     fin.close();
     fout.close();
 }
+
+// Bài 4
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main() {
+    ll n, k = 1, i = 1, ans, index;
+    ifstream fin("CSTK.INP");
+    ofstream fout("CSTK.OUT");
+    fin >> n;
+    while (i * 9 * pow(10, i - 1) <= n) {
+        n -= (i * 9 * pow(10, i - 1));
+        i++;
+        k *= 10;
+    }
+    index = n % i;
+    ans = k + n / i;
+    if (n % i == 0) {
+        ans -= 1;
+        index = i;
+    }
+    string a = to_string(ans);
+    fout << a;
+    fin.close();
+    fout.close();
+}
